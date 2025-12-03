@@ -296,6 +296,47 @@
         grid-template-columns: 1fr;
       }
     }
+    /* =======================================================
+       PASSERELLE DARK MODE (Pont vers dark.css)
+       ======================================================= */
+    
+    /* 1. Annuler le dégradé du fond en mode sombre pour prendre la couleur de dark.css */
+    body.dark {
+        background: #121212 !important; /* Couleur définie dans dark.css */
+        color: #e8e8e8;
+    }
+
+    /* 2. Appliquer le style "dark" aux cartes spécifiques du dashboard */
+    body.dark .card,
+    body.dark .filters,
+    body.dark .map-card {
+        background-color: #1e1e1e; /* Même couleur que .status-card dans dark.css */
+        color: #f1f1f1;
+        border: 1px solid #333;    /* Légère bordure pour le contraste */
+        box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    }
+
+    /* 3. Adapter les textes gris (labels) pour qu'ils soient lisibles */
+    body.dark .card-label,
+    body.dark .card-unit,
+    body.dark .checkbox-group label {
+        color: #a0a0a0;
+    }
+
+    /* 4. Adapter les boutons et inputs du dashboard */
+    body.dark .range-btn,
+    body.dark .date-input,
+    body.dark .btn-outline {
+        background-color: #2c2c2c;
+        color: #fff;
+        border-color: #444;
+    }
+
+    /* Le bouton actif reste bleu */
+    body.dark .range-btn.active {
+        background-color: var(--accent);
+        color: #fff;
+    }
   </style>
 </head>
 
